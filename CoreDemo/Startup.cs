@@ -78,7 +78,7 @@ namespace CoreDemo
             //范围内  作用域生存期服务 (AddScoped) 以每个客户端请求（连接）一次的方式创建。
             //单例   单一实例生存期服务 (AddSingleton) 是在第一次请求时（或者在运行 Startup.ConfigureServices 并且使用服务注册指定实例时）创建的。 每个后续请求都使用相同的实例。 如果应用需要单一实例行为，建议允许服务容器管理服务的生存期。 不要实现单一实例设计模式并提供用户代码来管理对象在类中的生存期。
             services.AddScoped<IMyDependency, MyDependency>();
-            services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
+            services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));//注册泛型类
 
 
             //TryAdd{ LIFETIME}       方法仅当尚未注册实现时，注册该服务。
