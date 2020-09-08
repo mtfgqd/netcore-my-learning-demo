@@ -1,8 +1,10 @@
-﻿using Castle.DynamicProxy;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-
-namespace _1_Autofac
+namespace DependencyInjectionAutofacDemo.MyDI
 {
     public class MyDIServiceProviderFactory : IServiceProviderFactory<MyContainerBuilder>
     {
@@ -35,15 +37,5 @@ namespace _1_Autofac
     public class MyContainerBuilder
     {
         internal IServiceCollection Services { get; set; }
-    }
-
-    public class MyInterceptor : IInterceptor
-    {
-        public void Intercept(IInvocation invocation)
-        {
-            Console.WriteLine($"Intercept before,Method:{invocation.Method.Name}");
-            invocation.Proceed();
-            Console.WriteLine($"Intercept after,Method:{invocation.Method.Name}");
-        }
     }
 }

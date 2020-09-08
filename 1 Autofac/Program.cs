@@ -17,6 +17,10 @@ namespace _1_Autofac
             CreateHostBuilder(args).Build().Run();
         }
 
+        /// 属性注入
+        /// 命名的
+        /// AOP
+        /// 子容器
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
             .UseServiceProviderFactory(new AutofacServiceProviderFactory())//注册第三方容器的入口
