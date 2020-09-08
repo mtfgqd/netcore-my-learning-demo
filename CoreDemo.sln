@@ -19,9 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4NetDemo", "Log4NetDemo\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BasicKnowledge", "BasicKnowledge", "{B5F1A01A-3596-498C-9285-974CCBC9E25B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1 Autofac", "1 IOC\1 Autofac.csproj", "{B6329A8D-63ED-4570-873D-09B027181F5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1 Autofac", "1 Autofac\1 Autofac.csproj", "{B6329A8D-63ED-4570-873D-09B027181F5C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "0 DependencyInjectionDemo", "DependencyInjectionDemo\0 DependencyInjectionDemo.csproj", "{0D431FE7-C27F-4155-864C-8B306AB93829}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "0 DependencyInjectionDemo", "0 DependencyInjectionDemo\0 DependencyInjectionDemo.csproj", "{0D431FE7-C27F-4155-864C-8B306AB93829}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
