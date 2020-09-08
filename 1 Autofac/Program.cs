@@ -23,7 +23,7 @@ namespace _1_Autofac
         /// 子容器
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-            .UseServiceProviderFactory(new AutofacServiceProviderFactory())//注册第三方容器的入口
+            .UseServiceProviderFactory(new AutofacServiceProviderFactory())//注册第三方容器的入口  IServiceProviderFactory<TContainerBuilder> factory
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

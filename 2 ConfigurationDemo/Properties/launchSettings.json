@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "2 ConfigurationDemo": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "EnvironmentKEY0": "EnvironmentKEY0",
+        "TAO_EnvironmentKEY1": "TAO_EnvironmentKEY1",
+        "TAO_EnvironmentKEY2": "TAO_EnvironmentKEY2"
+      }
+    }
+  }
+}
