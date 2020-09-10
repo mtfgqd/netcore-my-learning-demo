@@ -1,0 +1,3 @@
+﻿实现 IConfigurationSource
+实现 IConfigurationProvider
+实现 AddXXX方法
