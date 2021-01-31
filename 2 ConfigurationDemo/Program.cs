@@ -15,9 +15,12 @@ namespace ConfigurationDemo
             // 配置整体来看类似于树形结构 root-section-element
             // 配置框架 4个接口  IConfiguration   IConfigurationRoot   IConfigurationSection   IConfigurationBuilder
 
-            //扩展点
+            // new ConfigurationBuilder() -> builder.Add*** -> builder.Build() -> IConfiguration["Key"] or Bind()
+
+            //配置框架扩展
             //IConfigurationSource
             //IConfigurationProvider
+
             builder = new ConfigurationBuilder(); // 配置框架
 
             AddConfigrationItems();
@@ -43,7 +46,7 @@ namespace ConfigurationDemo
             GetInMemoryConfigrationItems();
             GetEnvironmentConfigrationItems();
             GetFileConfigrationItems();
-            GetFileConfigrationItemsFromBindingObject();
+            GetFileConfigrationItemsForBindingObject();
             GetCustomizedConfigration();
         }
 
@@ -83,14 +86,15 @@ namespace ConfigurationDemo
         /// </summary>
         private static void AddEnvironmentConfigrationItems()
         {
-            builder.AddEnvironmentVariables();
-            builder.AddEnvironmentVariables("TAO_");
+            builder.AddEnvironmentVariables();//1 注入所有环境变量
+            builder.AddEnvironmentVariables("TAO_");//2 前缀过滤，在注入环境变量时，只注入该前缀的变量
+                                                    
         }
 
         private static void GetEnvironmentConfigrationItems()
         {
             Console.WriteLine($"EnvironmentKEY0:{configurationRoot["EnvironmentKEY0"]}");
-            Console.WriteLine($"EnvironmentKEY1:{configurationRoot["EnvironmentKEY1"]}");
+            Console.WriteLine($"EnvironmentKEY1:{configurationRoot["EnvironmentKEY1"]}");// 在获取key的值时去掉TAO_这个前缀
             Console.WriteLine($"EnvironmentKEY2:{configurationRoot["EnvironmentKEY2"]}");
         }
         /// <summary>
@@ -117,7 +121,7 @@ namespace ConfigurationDemo
         /// 将配置项绑定到已有对象上
         /// 将配置项绑定到私有属性上
         /// </summary>
-        private static void GetFileConfigrationItemsFromBindingObject()
+        private static void GetFileConfigrationItemsForBindingObject()
         {
             var config = new Config()
             {

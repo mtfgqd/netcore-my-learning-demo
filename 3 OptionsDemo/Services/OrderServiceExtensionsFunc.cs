@@ -43,7 +43,7 @@ namespace Microsoft.Extensions.DependencyInjection
             //services.AddOptions<OrderServiceOptionValidateProperty>().Configure(options =>
             //{
             //    configuration.GetSection(OrderServiceOptionValidateProperty.SectionName).Bind(options);
-            //}).ValidateDataAnnotations();//用Annotations验证OrderServiceOptions中的字段
+            //}).ValidateDataAnnotations();//启用Annotations验证OrderServiceOptions中的属性
             //services.AddSingleton<IOrderServiceOptionValidate, OrderServiceOptionValidate>();
             #endregion
 
