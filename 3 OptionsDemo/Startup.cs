@@ -51,7 +51,8 @@ namespace OptionsDemo
             });
             #endregion
 
-            services.AddOrderService(Configuration);//AddOrderService 作为IServiceCollection的扩展方法，将IConfiguration作为扩展方法的参数
+            //AddOrderService 作为IServiceCollection的扩展方法，将IConfiguration作为扩展方法的参数
+            services.AddOrderService(Configuration);
 
             services.AddControllers();
         }

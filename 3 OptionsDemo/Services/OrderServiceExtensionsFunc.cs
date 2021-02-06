@@ -52,7 +52,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddOptions<OrderServiceOptionValidateProperty>().Configure(options =>
             {
                 configuration.GetSection(OrderServiceOptionValidateProperty.SectionName).Bind(options);
-            }).Services.AddSingleton<IValidateOptions<OrderServiceOptionValidateProperty>>(new OrderServiceOptionValidateOptions());
+            }).Services.AddSingleton<IValidateOptions<OrderServiceOptionValidateProperty>>(con => new OrderServiceOptionValidateOptions());
             services.AddSingleton<IOrderServiceOptionValidate, OrderServiceOptionValidate>();
 
             // 2

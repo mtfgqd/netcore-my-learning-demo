@@ -29,7 +29,7 @@ namespace LoggingDemo
         // 日志记录的方法
         public static void Main(string[] args)
         {
-            // LogDemo(args);
+            LogDemo(args);
             ShowSerilog(args);
         }
 
@@ -70,7 +70,6 @@ namespace LoggingDemo
             ShowLogWithScope(service);
 
         }
-
         private static void ShowLogUseInjection(IServiceProvider service)
         {
             var order = service.GetService<OrderService>();// use logger in service 推荐使用强类型的方式注入logger
@@ -96,7 +95,7 @@ namespace LoggingDemo
         {
             var logger = service.GetService<ILogger<Program>>();
 
-            // 配置文件中加入  "IncludeScopes": true,
+            // 配置文件中加入 配置项  "IncludeScopes": true,
             while (Console.ReadKey().Key != ConsoleKey.Escape)
             {
                 using (logger.BeginScope("ScopeId:{scopeid}", Guid.NewGuid()))
